@@ -141,7 +141,8 @@ public class MessageController {
             @RequestParam("tag") String tag,
             @RequestParam("file") MultipartFile file
     ) throws IOException {
-        if (message.getAuthor() == null) {
+        if (message == null) {
+            message = new Message();
             message.setAuthor(currentUser);
         }
 
